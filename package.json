@@ -1,0 +1,49 @@
+{
+	"name": "fullstack-auth",
+	"description": "",
+	"private": true,
+	"version": "0.1.0",
+	"homepage": "https://fullstack-auth-api.fly.dev/api/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mister-fix/fullstack-auth.git"
+	},
+	"main": "index.js",
+	"scripts": {
+		"start:api": "npm -w packages/api run dev",
+		"start:client": "npm -w packages/client run dev",
+		"start": "concurrently 'npm:start:api' 'npm:start:client'",
+		"prepare": "husky install",
+		"prettier": "prettier . \"!.prettierrc\" --write",
+		"cspell": "cspell ."
+	},
+	"author": "@mister-fix <https://github.com/mister-fix>",
+	"license": "MIT",
+	"keywords": [],
+	"type": "commonjs",
+	"lint-staged": {
+		"**/*.{js,ts}": [
+			"eslint --fix",
+			"prettier --write --ignore-unknown"
+		],
+		"**/*.{json,jsonc,md,yml,yaml}": [
+			"prettier --write --ignore-unknown"
+		],
+		"!**/.prettierrc": []
+	},
+	"workspaces": [
+		"packages/client",
+		"packages/api"
+	],
+	"devDependencies": {
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
+		"@commitlint/format": "^19.5.0",
+		"concurrently": "^9.1.2",
+		"husky": "^8.0.0",
+		"lint-staged": "^15.4.3",
+		"prettier": "3.5.3",
+		"prettier-plugin-organize-imports": "^4.1.0",
+		"pretty-quick": "^4.1.1"
+	}
+}

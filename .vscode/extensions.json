@@ -1,0 +1,3 @@
+{
+	"recommendations": ["formulahendry.auto-rename-tag", "aaron-bond.better-comments", "streetsidesoftware.code-spell-checker", "ms-azuretools.vscode-docker", "mikestead.dotenv", "editorconfig.editorconfig", "dsznajder.es7-react-js-snippets", "dbaeumer.vscode-eslint", "github.vscode-github-actions", "davidanson.vscode-markdownlint", "christian-kohler.path-intellisense", "csstools.postcss", "esbenp.prettier-vscode", "yoavbls.pretty-ts-errors", "prisma.prisma", "bradlc.vscode-tailwindcss", "infeng.vscode-react-typescript"]
+}
