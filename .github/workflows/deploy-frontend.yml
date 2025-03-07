@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm install -g vercel
-      - run: vercel --prod
+      - run: vercel --prod --yes
