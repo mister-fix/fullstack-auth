@@ -4,7 +4,7 @@
 #
 
 app = 'fullstack-auth-api'
-primary_region = 'bos'
+primary_region = 'ewr'
 
 [build]
 
@@ -21,3 +21,8 @@ primary_region = 'bos'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[env]
+	NODE_ENV = 'production'
+	HOST = '0.0.0.0'
+	PORT = 8080
