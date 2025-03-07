@@ -1,15 +1,10 @@
 {
 	"version": 2,
-	"builds": [
-		{
-			"src": "index.html",
-			"use": "@vercel/static"
-		}
-	],
-	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "/index.html"
-		}
-	]
+	"build": {
+		"env": {
+			"NODE_VERSION": "18"
+		},
+		"command": "npm run build",
+		"output": "dist"
+	}
 }
