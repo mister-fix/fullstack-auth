@@ -26,8 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run ESLint
-        run: npm run lint # Ensure 'lint' script is defined in package.json
+      - name: Run ESLint for api
+        run: cd packages/api && npm run lint # Ensure 'lint' script is defined in package.json
+
+      - name: Run ESLint for client
+        run: cd packages/client && npm run lint # Ensure 'lint' script is defined in package.json
 
       - name: Run Prettier
         run: npx prettier --check . # Run Prettier check
