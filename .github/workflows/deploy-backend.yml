@@ -25,7 +25,7 @@ jobs:
         run: npm install # Installs everything in the root
 
       - name: Install dependencies (API)
-        working-directory: packages/api
+        working-directory: ./packages/api
         run: npm install --omit=dev # Skip devDependencies if not needed in production
 
       - name: Setup Husky
