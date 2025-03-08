@@ -1,12 +1,23 @@
 name: Deploy Client to Vercel
+
 on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
+    name: Deploy Client
     runs-on: ubuntu-latest
+    concurrency: deploy-group # optional: ensure only one action runs at a time
     steps:
-      - uses: actions/checkout@v3
-      - run: npm install -g vercel
-      - run: vercel --prod --yes
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Vercel
+        working-directory: ./packages/client
+        run: npm install -g vercel
+
+      - name: Deploy Client
+        working-directory: ./packages/client
+        run: vercel --prod --yes
