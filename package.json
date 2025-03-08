@@ -22,11 +22,11 @@
 	"keywords": [],
 	"type": "commonjs",
 	"lint-staged": {
-		"packages/api/**/*.{js,ts}": [
+		"./packages/api/**/*.{js,ts}": [
 			"eslint --fix",
 			"prettier --write --ignore-unknown"
 		],
-		"packages/client/**/*.{js,ts,jsx,tsx}": [
+		"./packages/client/**/*.{js,ts,jsx,tsx}": [
 			"eslint --fix",
 			"prettier --write --ignore-unknown"
 		],
