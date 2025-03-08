@@ -22,4 +22,4 @@ jobs:
         working-directory: ./packages/client
         env:
           VERCEL_TOKEN: ${{ secrets.CI_VERCEL_TOKEN }}
-        run: vercel --prod --yes --token $VERCEL_TOKEN
+        run: vercel --prod --yes --token $VERCEL_TOKEN --project fullstack-auth-client
