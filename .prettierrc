@@ -21,6 +21,14 @@
     [
       { "files": "*.{cmp,page}", "options": { "parser": "html" } },
       { "files": "*.hbs", "options": { "printWidth": 120 } },
-      { "files": ["*.json", "*.jsonc"], "options": { "printWidth": 9999 } }
+      { "files": ["*.json", "*.jsonc"], "options": { "printWidth": 9999 } },
+			{ 
+				"files": "*.{yaml,yml}",
+				"options": { 
+					"yamlSortKeys": false,
+					"useTabs": false,
+					"tabWidth": 2
+				}
+			}
     ]
 }
