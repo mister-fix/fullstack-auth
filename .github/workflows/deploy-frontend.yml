@@ -23,6 +23,12 @@ jobs:
         working-directory: ./packages/client
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
+      - name: Install dependencies (Root)
+        run: npm install # Installs everything in the root
+
+      - name: Setup Husky
+        run: npx husky install # Run from root explicitly
+
       - name: Build Project Artifacts
         working-directory: ./packages/client
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
