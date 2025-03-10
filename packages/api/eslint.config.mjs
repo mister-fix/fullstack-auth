@@ -1,3 +1,6 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
 import pluginJs from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginImport from 'eslint-plugin-import';
@@ -5,9 +8,7 @@ import n from 'eslint-plugin-n';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import pluginSecurity from 'eslint-plugin-security';
 import globals from 'globals';
-import { dirname } from 'path';
 import tseslint from 'typescript-eslint';
-import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,7 +27,7 @@ export default [
 		languageOptions: {
 			parser: tseslint.parser,
 			parserOptions: {
-				project: 'tsconfig.json',
+				project: './tsconfig.json',
 				ecmaVersion: 'latest',
 				sourceType: 'module',
 				tsConfigRootDir: __dirname,
