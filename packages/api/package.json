@@ -7,10 +7,15 @@
 		"build": "tspc",
 		"start": "cross-env NODE_ENV=production node ./dist/index.js",
 		"dev": "cross-env NODE_ENV=development nodemon --exec ts-node index.ts",
+		"db:up": "docker-compose -f docker-compose.yml up -d",
+		"db:down": "docker-compose down",
+		"db:migrate": "npx prisma migrate dev --name init",
+		"seed": "ts-node prisma/seed.ts",
 		"deploy": "flyctl deploy",
 		"deploy:full": "npm run build && npm run deploy",
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
+		"lint:fix": "eslint . --fix",
+		"plop": "plop"
 	},
 	"type": "commonjs",
 	"dependencies": {
@@ -60,6 +65,7 @@
 		"eslint-plugin-unused-imports": "^4.1.4",
 		"globals": "^16.0.0",
 		"nodemon": "^3.1.9",
+		"plop": "^4.0.1",
 		"ts-node": "^10.9.2",
 		"ts-patch": "^3.3.0",
 		"tsconfig-paths": "^4.2.0",
