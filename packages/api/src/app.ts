@@ -6,6 +6,11 @@ import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
+import corsOptions from '@/config/cors-options';
+import cspDirectives from '@/config/csp-directives';
+import morganFormat from '@/config/morgan-format';
+import { errorHandler } from '@/middleware/error-handler';
+import { notFound } from '@/middleware/not-found';
 import mainRouter from '@/routes/main-router';
 
 const app: Express = express();
@@ -23,8 +28,8 @@ app.set('strict routing', false); // Enable strict routing
 app.set('query parsers', 'simple'); // Parse queries as key-value pairs
 
 // Middleware
-app.use(cors());
-app.use(helmet());
+app.use(cors(corsOptions));
+app.use(helmet(cspDirectives));
 app.use(compression());
 app.use(cookieParser());
 app.use(express.json({ limit: '1mb' }));
@@ -41,13 +46,27 @@ app.use(limiter);
 
 // Logging
 if (process.env.NODE_ENV === 'development') {
-	app.use(morgan('dev'));
+	app.use(morgan(morganFormat));
 }
 
+// Redirect root URL requests to the main API endpoint
 app.get('/', (req: Request, res: Response) => {
 	res.redirect('/api');
 });
 
+// Ignore request for 'favicon'
+app.get('/favicon.ico', (req: Request, res: Response) => {
+	res.status(204).end();
+});
+
+// Main API endpoint
 app.use('/api', mainRouter);
 
+// 404 Not found middleware
+app.use(notFound);
+
+// Error handling middleware
+app.use(errorHandler);
+
+// Exporting Express application
 export default app;
