@@ -23,11 +23,11 @@
 	"type": "commonjs",
 	"lint-staged": {
 		"./packages/api/**/*.{js,ts}": [
-			"eslint --fix",
+			"eslint --fix --config ./packages/api/eslint.config.mjs",
 			"prettier --write --ignore-unknown"
 		],
 		"./packages/client/**/*.{js,ts,jsx,tsx}": [
-			"eslint --fix",
+			"eslint --fix --config ./packages/client/eslint.config.js",
 			"prettier --write --ignore-unknown"
 		],
 		"**/*.{json,jsonc,md,yml,yaml}": [
