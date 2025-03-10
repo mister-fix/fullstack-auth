@@ -26,4 +26,3 @@ primary_region = 'ewr'
 	NODE_ENV = 'production'
 	HOST = '0.0.0.0'
 	PORT = 8080
-	SUPABASE_DATABASE_URL = "postgresql://postgres:ebd@TDurbP8Hfm5@db.pvkmogapownrmbcbtijm.supabase.co:5432/postgres"
