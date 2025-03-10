@@ -5,7 +5,12 @@ import n from 'eslint-plugin-n';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import pluginSecurity from 'eslint-plugin-security';
 import globals from 'globals';
+import { dirname } from 'path';
 import tseslint from 'typescript-eslint';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -158,6 +163,7 @@ export default [
 				...globals.browser,
 				...globals.node,
 				...globals.es2021,
+				__dirname: true,
 			},
 		},
 	},
