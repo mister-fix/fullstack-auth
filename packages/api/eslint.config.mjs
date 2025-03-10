@@ -27,7 +27,7 @@ export default [
 		languageOptions: {
 			parser: tseslint.parser,
 			parserOptions: {
-				project: './tsconfig.json',
+				project: `${__dirname}/tsconfig.json`,
 				ecmaVersion: 'latest',
 				sourceType: 'module',
 				tsConfigRootDir: __dirname,
