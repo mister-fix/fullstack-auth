@@ -74,6 +74,12 @@ export default [
 					map: [
 						['@', './src/*'],
 						['@/config/*', './src/config/*'],
+						['@/controllers/*', './src/controllers/*'],
+						['@/middleware/*', './src/middleware/*'],
+						['@/routes/*', './src/routes/*'],
+						['@/utils/*', './src/utils/*'],
+						['@/services/*', './src/services/*'],
+						['@/prisma', './src/prisma'],
 					],
 					extensions: ['.js', '.ts', '.json'],
 				},
