@@ -87,6 +87,25 @@ fullstack-auth/
 ├─ docs/                    # GitHub supporting documents and templates
 ├─ packages/                # Main source code directory
 │  ├─ api/                  # Configuration files (e.g., database, environment)
+│  │  ├─ dist/
+│  │  ├─ logs/
+│  │  ├─ prisma/
+│  │  ├─ src/
+│  │  │  ├─ controllers/
+│  │  │  ├─ routes/
+│  │  │  ├─ utils/
+│  │  │  ├─ app.ts
+│  │  │  ├─ prisma.ts
+│  │  ├─ .dockerignore
+│  │  ├─ .env
+│  │  ├─ .gitignore
+│  │  ├─ docker-compose.yml
+│  │  ├─ Dockerfile
+│  │  ├─ eslint.config.mjs
+│  │  ├─ fly.toml
+│  │  ├─ index.ts           # Main file, serves as API entrypoint.
+│  │  ├─ package.json
+│  │  ├─ tsconfig.json
 │  ├─ client/               # API route handlers
 ├─ shared/                  # Editor configuration for consistent coding styles
 ├─ .editorconfig            # Editor configuration for consistent coding styles
@@ -97,7 +116,6 @@ fullstack-auth/
 ├─ CHANGELOG.md             # Changelog for project updates
 ├─ commitlint.config.mjs    # Commit message linting configuration
 ├─ cspell.json              # Configuration for spellcheck
-├─ docker-compose.yml       # PostgreSQL Docker configuration
 ├─ LICENSE                  # Project license
 ├─ package-lock.json        # Locked versions of dependencies
 ├─ package.json             # Project metadata and dependencies
